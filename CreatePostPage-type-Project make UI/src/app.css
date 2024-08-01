@@ -21,9 +21,13 @@
 }
 .message{
   margin-top: 1.5rem;
+  padding: 70px;
 }
 .create-post{
   width: 80%;
   margin-left: 10%;
   margin: 50px;
+}
+.post-btn{
+  margin-left:200px ;
 }

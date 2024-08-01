@@ -13,14 +13,24 @@ function App (){
 
  const [selectedTab, setSelectedTab] = useState("Home")
 
+ const onPostBtn = () =>{
+  return (
+    setSelectedTab('Create Post')
+  )
+ }
+ 
+
 
   return (
-    <PostListProvider>
+    <PostListProvider value={{
+      selectedTab,
+      setSelectedTab
+    }}>
     <div className="container" >
     <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab}></Sidebar>
     <div className="content">
     <Header></Header>
-    {selectedTab === "Home" ? <PostCardList></PostCardList> : <CreatePost></CreatePost>}
+    {selectedTab === "Home" ? <PostCardList onPostBtn={onPostBtn}></PostCardList> : <CreatePost></CreatePost>}
     <Footer></Footer>
     </div>
     </div>
